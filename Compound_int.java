@@ -38,7 +38,7 @@ public class Compound_int {
 
 				}
 			} else {
-				System.out.println("ÊäÈë³¬³ö·¶Î§£¬ÇëÖØĞÂÊäÈë:");
+				System.out.println("è¾“å…¥è¶…å‡ºèŒƒå›´ï¼Œè¯·é‡æ–°è¾“å…¥:");
 
 			}
 		}
@@ -46,215 +46,215 @@ public class Compound_int {
 
 	static Scanner scanner = new Scanner(System.in);
 
-	static void tip()// ¼ÆËã¹«Ê½ºÍÒ»Ğ©±äÁ¿µÄ½éÉÜ
+	static void tip()// è®¡ç®—å…¬å¼å’Œä¸€äº›å˜é‡çš„ä»‹ç»
 	{
-		System.out.printf("¸´Àû¼ÆËãÈí¼ş\n");
-		System.out.printf("    ¸´Àû¼ÆËã¹«Ê½:F=P*pow((1+i/m),N*m)\n");
-		System.out.printf("    µ¥Àû¼ÆËã¹«Ê½:F=P+P*N*i\n");
-		System.out.printf("    µÈ¶îÍ¶×Ê¹«Ê½:F=P*12*(1+i)*(pow(1+i,N)-1)/i\n");
-		System.out.printf("\tF:¸´ÀûÖÕÖµ|Äê½ğÖÕÖµ\n");
-		System.out.printf("\tP:±¾½ğ\n");
-		System.out.printf("\ti:ÀûÂÊ\n");
-		System.out.printf("\tN£ºÀûÂÊ»ñÈ¡Ê±¼äµÄÕûÊı±¶\n");
-		System.out.printf("\tm:Äê¸´Àû´ÎÊı(Ò»Äêµ±ÖĞµÄ¹öÀû´ÎÊı)\n");
+		System.out.printf("å¤åˆ©è®¡ç®—è½¯ä»¶\n");
+		System.out.printf("    å¤åˆ©è®¡ç®—å…¬å¼:F=P*pow((1+i/m),N*m)\n");
+		System.out.printf("    å•åˆ©è®¡ç®—å…¬å¼:F=P+P*N*i\n");
+		System.out.printf("    ç­‰é¢æŠ•èµ„å…¬å¼:F=P*12*(1+i)*(pow(1+i,N)-1)/i\n");
+		System.out.printf("\tF:å¤åˆ©ç»ˆå€¼|å¹´é‡‘ç»ˆå€¼\n");
+		System.out.printf("\tP:æœ¬é‡‘\n");
+		System.out.printf("\ti:åˆ©ç‡\n");
+		System.out.printf("\tNï¼šåˆ©ç‡è·å–æ—¶é—´çš„æ•´æ•°å€\n");
+		System.out.printf("\tm:å¹´å¤åˆ©æ¬¡æ•°(ä¸€å¹´å½“ä¸­çš„æ»šåˆ©æ¬¡æ•°)\n");
 	}
 
-	static void menu()// ²Ëµ¥
+	static void menu()// èœå•
 	{
 		System.out.printf("\t\t|-----------------------------------|\n");
 		System.out.printf("\t\t|             welcome               |\n");
 		System.out.printf("\t\t|-----------------------------------|\n");
-		System.out.printf("\t\t|           1:¼ÆËã±¾½ğ                                        |\n");
-		System.out.printf("\t\t|           2:¼ÆËãÄê¸´ÀûÖÕÖµ                             |\n");
-		System.out.printf("\t\t|           3:µ¥Àû¼ÆËã                                        |\n");
-		System.out.printf("\t\t|           4:¼ÆËãÄê·İ                                        |\n");
-		System.out.printf("\t\t|           5:¼ÆËãÄêÀûÂÊ                                    |\n");
-		System.out.printf("\t\t|           6:µÈ¶î¶¨Í¶(Äê|ÔÂ)          |\n");
-		System.out.printf("\t\t|           7:µÈ¶î»¹¿î                                        |\n");
-		System.out.printf("\t\t|           0:½áÊø                                               |\n");
+		System.out.printf("\t\t|           1:è®¡ç®—æœ¬é‡‘              |\n");
+		System.out.printf("\t\t|           2:è®¡ç®—å¹´å¤åˆ©ç»ˆå€¼        |\n");
+		System.out.printf("\t\t|           3:å•åˆ©è®¡ç®—              |\n");
+		System.out.printf("\t\t|           4:è®¡ç®—å¹´ä»½              |\n");
+		System.out.printf("\t\t|           5:è®¡ç®—å¹´åˆ©ç‡            |\n");
+		System.out.printf("\t\t|           6:ç­‰é¢å®šæŠ•(å¹´|æœˆ)       |\n");
+		System.out.printf("\t\t|           7:ç­‰é¢è¿˜æ¬¾              |\n");
+		System.out.printf("\t\t|           0:ç»“æŸ                  |\n");
 		System.out.printf("\t\t|-----------------------------------|\n");
-		System.out.printf("ÇëÊäÈëÄãÒªÑ¡ÔñµÄ¹¦ÄÜ(0~7):");
+		System.out.printf("è¯·è¾“å…¥ä½ è¦é€‰æ‹©çš„åŠŸèƒ½(0~7):");
 
 	}
 
-	static double capital_formula(double F, double i, int N, int m)// ±¾½ğ¼ÆËã¹«Ê½
+	static double capital_formula(double F, double i, int N, int m)// æœ¬é‡‘è®¡ç®—å…¬å¼
 	{
 		double P;
 		P = F / Math.pow((1 + i / m), N * m);
 		return P;
 	}
 
-	static void benjin()// ¼ÆËã±¾½ğ
+	static void benjin()// è®¡ç®—æœ¬é‡‘
 	{
 		int N, m;
 		double i, F, P;
-		System.out.printf("¸´ÀûÖÕÖµ:");
+		System.out.printf("å¤åˆ©ç»ˆå€¼:");
 		F = scanner.nextDouble();
-		System.out.printf("ÄêÀûÂÊ:");
+		System.out.printf("å¹´åˆ©ç‡:");
 		i = scanner.nextDouble();
-		System.out.printf("´æÈëÄêÏŞ:");
+		System.out.printf("å­˜å…¥å¹´é™:");
 		N = scanner.nextInt();
-		System.out.printf("Äê¸´Àû´ÎÊı:");
+		System.out.printf("å¹´å¤åˆ©æ¬¡æ•°:");
 		m = scanner.nextInt();
 		P = capital_formula(F, i, N, m);
-		System.out.println("Äê¸´ÀûÖÕÖµÎª" + F + "ĞèÒª±¾½ğÎª:" + P);
+		System.out.println("å¹´å¤åˆ©ç»ˆå€¼ä¸º" + F + "éœ€è¦æœ¬é‡‘ä¸º:" + P);
 	}
 
-	static double compound_amount_formla(double P, double i, int N, int m)// ¸´Àû¼ÆËã¹«Ê½
+	static double compound_amount_formla(double P, double i, int N, int m)// å¤åˆ©è®¡ç®—å…¬å¼
 	{
 		double F;
 		F = P * Math.pow((1 + i / m), N * m);
 		return F;
 	}
 
-	static void fuli()// ¼ÆËã¸´ÀûÖÕÖµ
+	static void fuli()// è®¡ç®—å¤åˆ©ç»ˆå€¼
 	{
 		int N, m;
 		double i, F, P;
-		System.out.printf("´æÈë±¾½ğ:");
+		System.out.printf("å­˜å…¥æœ¬é‡‘:");
 		P = scanner.nextDouble();
-		System.out.printf("ÄêÀûÂÊ:");
+		System.out.printf("å¹´åˆ©ç‡:");
 		i = scanner.nextDouble();
-		System.out.printf("´æÈëÄêÏŞ:");
+		System.out.printf("å­˜å…¥å¹´é™:");
 		N = scanner.nextInt();
-		System.out.printf("Äê¸´Àû´ÎÊı:");
+		System.out.printf("å¹´å¤åˆ©æ¬¡æ•°:");
 		m = scanner.nextInt();
 		F = compound_amount_formla(P, i, N, m);
-		System.out.println("¸´ÀûÖÕÖµ:" + F);
+		System.out.println("å¤åˆ©ç»ˆå€¼:" + F);
 	}
 
-	static double simple_interest_formula(double P, int N, double i)// µ¥Àû¼ÆËã¹«Ê½
+	static double simple_interest_formula(double P, int N, double i)// å•åˆ©è®¡ç®—å…¬å¼
 	{
 		double F;
 		F = P + P * N * i;
 		return F;
 	}
 
-	static void danli()// µ¥Àû¼ÆËã
+	static void danli()// å•åˆ©è®¡ç®—
 	{
 		int N;
 		double i, F, P;
-		System.out.printf("´æÈë±¾½ğ:");
+		System.out.printf("å­˜å…¥æœ¬é‡‘:");
 		P = scanner.nextDouble();
-		System.out.printf("ÄêÀûÂÊ:");
+		System.out.printf("å¹´åˆ©ç‡:");
 		i = scanner.nextDouble();
-		System.out.printf("´æÈëÄêÏŞ:");
+		System.out.printf("å­˜å…¥å¹´é™:");
 		N = scanner.nextInt();
 		F = simple_interest_formula(P, N, i);
-		System.out.println("±¾Ï¢ºÍÎª:" + F);
+		System.out.println("æœ¬æ¯å’Œä¸º:" + F);
 	}
 
-	static int years_formula(double F, double P, double i, int m)// ¸ù¾İ¸´ÀûÖÕÖµÇóÄê·İ
+	static int years_formula(double F, double P, double i, int m)// æ ¹æ®å¤åˆ©ç»ˆå€¼æ±‚å¹´ä»½
 	{
 		int year;
 		year = (int) (Math.log(F / P) / Math.log(1 + i / m) / m);
 		return year;
 	}
 
-	static void years()// ÇóÄê·İ
+	static void years()// æ±‚å¹´ä»½
 	{
 		int N, m;
 		double i, F, P;
-		System.out.printf("¸´ÀûÖÕÖµ:");
+		System.out.printf("å¤åˆ©ç»ˆå€¼:");
 		F = scanner.nextDouble();
-		System.out.printf("´æÈë±¾½ğ:");
+		System.out.printf("å­˜å…¥æœ¬é‡‘:");
 		P = scanner.nextDouble();
-		System.out.printf("ÄêÀûÂÊ:");
+		System.out.printf("å¹´åˆ©ç‡:");
 		i = scanner.nextDouble();
-		System.out.printf("Äê¸´Àû´ÎÊı:");
+		System.out.printf("å¹´å¤åˆ©æ¬¡æ•°:");
 		m = scanner.nextInt();
 		N = years_formula(F, P, i, m);
-		System.out.println("´Ó" + P + "µ½" + F + "ĞèÒª" + N + "Äê");
+		System.out.println("ä»" + P + "åˆ°" + F + "éœ€è¦" + N + "å¹´");
 	}
 
-	static double rate_formula(int m, double F, double P, int N)// ¸´ÀûµÄÀûÂÊ¼ÆËã¹«Ê½
+	static double rate_formula(int m, double F, double P, int N)// å¤åˆ©çš„åˆ©ç‡è®¡ç®—å…¬å¼
 	{
 		double rate;
 		rate = m * (Math.pow(F / P, 1.0 / (N * m)) - 1);
 		return rate;
 	}
 
-	static void annual_int_rate()// ¼ÆËãÄêÀûÂÊ
+	static void annual_int_rate()// è®¡ç®—å¹´åˆ©ç‡
 	{
 		int N, m;
 		double i, F, P;
-		System.out.printf("¸´ÀûÖÕÖµ:");
+		System.out.printf("å¤åˆ©ç»ˆå€¼:");
 		F = scanner.nextDouble();
-		System.out.printf("´æÈë±¾½ğ:");
+		System.out.printf("å­˜å…¥æœ¬é‡‘:");
 		P = scanner.nextDouble();
-		System.out.printf("´æÈëÄêÏŞ:");
+		System.out.printf("å­˜å…¥å¹´é™:");
 		N = scanner.nextInt();
-		System.out.printf("Äê¸´Àû´ÎÊı:");
+		System.out.printf("å¹´å¤åˆ©æ¬¡æ•°:");
 		m = scanner.nextInt();
 		i = rate_formula(m, F, P, N);
-		System.out.println("´Ó" + P + "µ½" + F + "ĞèÒª" + i);
+		System.out.println("ä»" + P + "åˆ°" + F + "éœ€è¦" + i);
 	}
 
-	static double according_year_formula(double P, int N, double i)// °´ÕÕÄê·İµÈ¶îÍ¶×Ê¼ÆËã¹«Ê½
+	static double according_year_formula(double P, int N, double i)// æŒ‰ç…§å¹´ä»½ç­‰é¢æŠ•èµ„è®¡ç®—å…¬å¼
 	{
 		double final_value;
 		final_value = P * (Math.pow(1 + i, N) - 1) / i;
 		return final_value;
 	}
 
-	static double according_month_formula(double P, int N, double i)// °´ÕÕÔÂ·İµÈ¶îÍ¶×Ê¼ÆËã¹«Ê½
+	static double according_month_formula(double P, int N, double i)// æŒ‰ç…§æœˆä»½ç­‰é¢æŠ•èµ„è®¡ç®—å…¬å¼
 	{
 		double final_value;
 		final_value = P * 12 * (1 + i) * (Math.pow(1 + i, N) - 1) / i;
 		return final_value;
 	}
 
-	static void YM_Equal_cast_final()// ¼ÆËãµÈ¶îÍ¶×Ê
+	static void YM_Equal_cast_final()// è®¡ç®—ç­‰é¢æŠ•èµ„
 	{
 		int N, n;
 		double i, F, P;
-		System.out.printf("\t\t1:°´ÄêÍ¶×Ê\n\t\t2:°´ÔÂÍ¶×Ê\n");
-		System.out.printf("ÇëÑ¡ÔñÄãÒªµÄ¹¦ÄÜ<1|2>:");
+		System.out.printf("\t\t1:æŒ‰å¹´æŠ•èµ„\n\t\t2:æŒ‰æœˆæŠ•èµ„\n");
+		System.out.printf("è¯·é€‰æ‹©ä½ è¦çš„åŠŸèƒ½<1|2>:");
 		n = scanner.nextInt();
 		if (n == 1) {
-			System.out.printf("´æÈë±¾½ğ:");
+			System.out.printf("å­˜å…¥æœ¬é‡‘:");
 			P = scanner.nextDouble();
-			System.out.printf("´æÈëÄêÏŞ:");
+			System.out.printf("å­˜å…¥å¹´é™:");
 			N = scanner.nextInt();
-			System.out.printf("ÄêÀûÂÊ:");
+			System.out.printf("å¹´åˆ©ç‡:");
 			i = scanner.nextDouble();
 			F = according_year_formula(P, N, i);
-			System.out.println(N + "ÄêºóµÄ×Ü²úÖµ:" + F);
+			System.out.println(N + "å¹´åçš„æ€»äº§å€¼:" + F);
 
 		} else if (n == 2) {
-			System.out.printf("´æÈë±¾½ğ:");
+			System.out.printf("å­˜å…¥æœ¬é‡‘:");
 			P = scanner.nextDouble();
-			System.out.printf("´æÈëÄêÏŞ:");
+			System.out.printf("å­˜å…¥å¹´é™:");
 			N = scanner.nextInt();
-			System.out.printf("ÄêÀûÂÊ:");
+			System.out.printf("å¹´åˆ©ç‡:");
 			i = scanner.nextDouble();
 			F = according_month_formula(P, N, i);
-			System.out.println(N + "ÄêºóµÄ×Ü²úÖµ:" + F);
+			System.out.println(N + "å¹´åçš„æ€»äº§å€¼:" + F);
 		} else {
-			System.out.printf("ÊäÈëÓĞÎó!\n");
+			System.out.printf("è¾“å…¥æœ‰è¯¯!\n");
 		}
 
 	}
 
-	static double Average_capital_plus_interest_formula(double F, int N,double i)// µÈ¶î»¹¿î¹«Ê½
+	static double Average_capital_plus_interest_formula(double F, int N,double i)// ç­‰é¢è¿˜æ¬¾å…¬å¼
 	{
 		double refund;
 		refund = F * i / (12 * (1 + i) * (Math.pow(1 + i, N) - 1));
 		return refund;
 	}
 
-	static void Average_capital_plus_interest()// µÈ¶î»¹¿î
+	static void Average_capital_plus_interest()// ç­‰é¢è¿˜æ¬¾
 	{
 		int N;
 		double i, F, P;
-		System.out.printf("´û¿î½ğ¶î:");
+		System.out.printf("è´·æ¬¾é‡‘é¢:");
 		F = scanner.nextDouble();
-		System.out.printf("´æÈëÄêÏŞ:");
+		System.out.printf("å­˜å…¥å¹´é™:");
 		N = scanner.nextInt();
-		System.out.printf("ÄêÀûÂÊ:");
+		System.out.printf("å¹´åˆ©ç‡:");
 		i = scanner.nextDouble();
 		P = Average_capital_plus_interest_formula(F, N, i);
-		System.out.println("´û¿î" + F + "Ã¿ÔÂĞèÒª»¹¿î" + P);
+		System.out.println("è´·æ¬¾" + F + "æ¯æœˆéœ€è¦è¿˜æ¬¾" + P);
 	}
 
 }
